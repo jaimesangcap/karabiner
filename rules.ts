@@ -8,9 +8,9 @@ const rules: KarabinerRules[] = [
     description: "Hyper Key (⌃⌥⇧⌘)",
     manipulators: [
       {
-        description: "Caps Lock -> Hyper Key",
+        description: "Spacebar -> Hyper Key",
         from: {
-          key_code: "caps_lock",
+          key_code: "spacebar",
           modifiers: {
             optional: ["any"],
           },
@@ -33,10 +33,59 @@ const rules: KarabinerRules[] = [
         ],
         to_if_alone: [
           {
-            key_code: "escape",
+            key_code: "spacebar",
           },
         ],
         type: "basic",
+      },
+      {
+        description: "Caps Lock to Escape Ctrl",
+        type: "basic",
+        from: {
+          key_code: "caps_lock",
+          modifiers: {
+            optional: ["any"],
+          },
+        },
+        to: [
+          {
+            key_code: "left_control",
+            modifiers: ["any"],
+          },
+        ],
+        to_if_alone: [
+          {
+            key_code: "escape",
+          }
+        ]
+      },
+      {
+        type: "basic",
+        from: {
+          key_code: "right_command",
+          modifiers: {
+            optional: ["any"]
+          }
+        },
+        to: [
+          {
+            key_code: "left_control",
+            modifiers: [
+              "left_option",
+              "left_shift",
+              "left_command"
+            ]
+          }
+        ],
+        to_if_alone: [
+          {
+            key_code: "spacebar",
+            modifiers: [
+              "left_command",
+              "left_shift"
+            ]
+          }
+        ],
       },
       //      {
       //        type: "basic",
@@ -71,8 +120,9 @@ const rules: KarabinerRules[] = [
     },
     // o = "Open" applications
     o: {
-      i: app("1Password"),
-      b: app("Google Chrome"),
+      i: app("IntelliJ IDEA"),
+      p: app("1Password"),
+      g: app("Google Chrome"),
       s: app("Slack"),
       t: app("iTerm"),
       f: app("Finder"),
@@ -113,6 +163,8 @@ const rules: KarabinerRules[] = [
       h: rectangle("left-half"),
       l: rectangle("right-half"),
       f: rectangle("maximize"),
+      r: rectangle("first-fourth"),
+      e: rectangle("last-three-fourths"),
       u: {
         description: "Window: Previous Tab",
         to: [
