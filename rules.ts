@@ -71,33 +71,13 @@ const rules: KarabinerRules[] = [
     },
     // o = "Open" applications
     o: {
-      1: app("1Password"),
-      g: app("Google Chrome"),
-      c: app("Notion Calendar"),
-      v: app("Zed"),
-      d: app("Discord"),
+      i: app("1Password"),
+      b: app("Google Chrome"),
       s: app("Slack"),
-      e: app("Superhuman"),
-      n: app("Notion"),
-      t: app("Terminal"),
-      // Open todo list managed via *H*ypersonic
-      h: open(
-        "notion://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026"
-      ),
-      z: app("zoom.us"),
-      // "M"arkdown (Reflect.app)
-      m: app("Reflect"),
-      r: app("Reflect"),
+      t: app("iTerm"),
       f: app("Finder"),
-      // "i"Message
-      i: app("Texts"),
-      p: app("Spotify"),
-      a: app("iA Presenter"),
-      // "W"hatsApp has been replaced by Texts
-      w: open("Texts"),
-      l: open(
-        "raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink"
-      ),
+      // i"M"essage
+      m: app("Texts"),
     },
 
     // TODO: This doesn't quite work yet.
@@ -254,9 +234,9 @@ const rules: KarabinerRules[] = [
       },
     },
 
-    // v = "moVe" which isn't "m" because we want it to be on the left hand
+    // a = to avoid stretch while navigating
     // so that hjkl work like they do in vim
-    v: {
+    a: {
       h: {
         to: [{ key_code: "left_arrow" }],
       },
@@ -290,66 +270,66 @@ const rules: KarabinerRules[] = [
     },
 
     // c = Musi*c* which isn't "m" because we want it to be on the left hand
-    c: {
-      p: {
-        to: [{ key_code: "play_or_pause" }],
-      },
-      n: {
-        to: [{ key_code: "fastforward" }],
-      },
-      b: {
-        to: [{ key_code: "rewind" }],
-      },
-    },
+    // c: {
+    //   p: {
+    //     to: [{ key_code: "play_or_pause" }],
+    //   },
+    //   n: {
+    //     to: [{ key_code: "fastforward" }],
+    //   },
+    //   b: {
+    //     to: [{ key_code: "rewind" }],
+    //   },
+    // },
 
     // r = "Raycast"
     r: {
-      c: open("raycast://extensions/thomas/color-picker/pick-color"),
+      // c: open("raycast://extensions/thomas/color-picker/pick-color"),
       n: open("raycast://script-commands/dismiss-notifications"),
-      l: open(
-        "raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
-      ),
+      // l: open(
+      //   "raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
+      // ),
       e: open(
         "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
       ),
-      p: open("raycast://extensions/raycast/raycast/confetti"),
-      a: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
-      s: open("raycast://extensions/peduarte/silent-mention/index"),
+      // p: open("raycast://extensions/raycast/raycast/confetti"),
+      // a: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
+      // s: open("raycast://extensions/peduarte/silent-mention/index"),
       h: open(
         "raycast://extensions/raycast/clipboard-history/clipboard-history"
       ),
-      1: open(
-        "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1"
-      ),
-      2: open(
-        "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
-      ),
+      // 1: open(
+      //   "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1"
+      // ),
+      // 2: open(
+      //   "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
+      // ),
     },
   }),
-  {
-    description: "Change Backspace to Spacebar when Minecraft is focused",
-    manipulators: [
-      {
-        type: "basic",
-        from: {
-          key_code: "delete_or_backspace",
-        },
-        to: [
-          {
-            key_code: "spacebar",
-          },
-        ],
-        conditions: [
-          {
-            type: "frontmost_application_if",
-            file_paths: [
-              "^/Users/mxstbr/Library/Application Support/minecraft/runtime/java-runtime-gamma/mac-os-arm64/java-runtime-gamma/jre.bundle/Contents/Home/bin/java$",
-            ],
-          },
-        ],
-      },
-    ],
-  },
+  // {
+  //   description: "Change Backspace to Spacebar when Minecraft is focused",
+  //   manipulators: [
+  //     {
+  //       type: "basic",
+  //       from: {
+  //         key_code: "delete_or_backspace",
+  //       },
+  //       to: [
+  //         {
+  //           key_code: "spacebar",
+  //         },
+  //       ],
+  //       conditions: [
+  //         {
+  //           type: "frontmost_application_if",
+  //           file_paths: [
+  //             "^/Users/mxstbr/Library/Application Support/minecraft/runtime/java-runtime-gamma/mac-os-arm64/java-runtime-gamma/jre.bundle/Contents/Home/bin/java$",
+  //           ],
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
 ];
 
 fs.writeFileSync(
