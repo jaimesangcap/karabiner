@@ -8,9 +8,9 @@ const rules: KarabinerRules[] = [
     description: "Hyper Key (⌃⌥⇧⌘)",
     manipulators: [
       {
-        description: "Spacebar -> Hyper Key",
+        description: "Caps Lock -> Hyper Key",
         from: {
-          key_code: "spacebar",
+          key_code: "caps_lock",
           modifiers: {
             optional: ["any"],
           },
@@ -33,16 +33,16 @@ const rules: KarabinerRules[] = [
         ],
         to_if_alone: [
           {
-            key_code: "spacebar",
+            key_code: "escape",
           },
         ],
         type: "basic",
       },
       {
-        description: "Caps Lock to Escape Ctrl",
+        description: "Spacebar to Ctrl",
         type: "basic",
         from: {
-          key_code: "caps_lock",
+          key_code: "spacebar",
           modifiers: {
             optional: ["any"],
           },
@@ -55,7 +55,7 @@ const rules: KarabinerRules[] = [
         ],
         to_if_alone: [
           {
-            key_code: "escape",
+            key_code: "spacebar",
           }
         ]
       },
@@ -87,37 +87,34 @@ const rules: KarabinerRules[] = [
           }
         ],
       },
-      //      {
-      //        type: "basic",
-      //        description: "Disable CMD + Tab to force Hyper Key usage",
-      //        from: {
-      //          key_code: "tab",
-      //          modifiers: {
-      //            mandatory: ["left_command"],
-      //          },
-      //        },
-      //        to: [
-      //          {
-      //            key_code: "tab",
-      //          },
-      //        ],
-      //      },
+     {
+       type: "basic",
+       description: "Disable CMD + Tab to force Hyper Key usage",
+       from: {
+         key_code: "tab",
+         modifiers: {
+           mandatory: ["left_command"],
+         },
+       },
+       to: [
+         {
+           key_code: "tab",
+         },
+       ],
+     },
     ],
   },
   ...createHyperSubLayers({
-    spacebar: open(
-      "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
-    ),
     // b = "B"rowse
-    b: {
-      t: open("https://twitter.com"),
-      // Quarterly "P"lan
-      p: open("https://mxstbr.com/cal"),
-      y: open("https://news.ycombinator.com"),
-      f: open("https://facebook.com"),
-      r: open("https://reddit.com"),
-      h: open("https://hashnode.com/draft"),
-    },
+    // b: {
+    //   t: open("https://twitter.com"),
+    //   // Quarterly "P"lan
+    //   p: open("https://mxstbr.com/cal"),
+    //   y: open("https://news.ycombinator.com"),
+    //   f: open("https://facebook.com"),
+    //   r: open("https://reddit.com"),
+    //   h: open("https://hashnode.com/draft"),
+    // },
     // o = "Open" applications
     o: {
       i: app("IntelliJ IDEA"),
@@ -128,6 +125,8 @@ const rules: KarabinerRules[] = [
       f: app("Finder"),
       // i"M"essage
       m: app("Texts"),
+      z: app("Bazecor"),
+      b: app("BoltAI"),
     },
 
     // TODO: This doesn't quite work yet.
@@ -145,8 +144,8 @@ const rules: KarabinerRules[] = [
     //   `,
     // },
 
-    // w = "Window" via rectangle.app
-    w: {
+    // s = Window via rectangle.app
+    s: {
       semicolon: {
         description: "Window: Hide",
         to: [
@@ -163,8 +162,8 @@ const rules: KarabinerRules[] = [
       h: rectangle("left-half"),
       l: rectangle("right-half"),
       f: rectangle("maximize"),
-      r: rectangle("first-fourth"),
-      e: rectangle("last-three-fourths"),
+      r: rectangle("first-third"),
+      e: rectangle("last-two-thirds"),
       u: {
         description: "Window: Previous Tab",
         to: [
@@ -213,8 +212,8 @@ const rules: KarabinerRules[] = [
       },
     },
 
-    // s = "System"
-    s: {
+    // w = System
+    w: {
       u: {
         to: [
           {
@@ -288,7 +287,7 @@ const rules: KarabinerRules[] = [
 
     // a = to avoid stretch while navigating
     // so that hjkl work like they do in vim
-    a: {
+    spacebar: {
       h: {
         to: [{ key_code: "left_arrow" }],
       },
