@@ -38,6 +38,7 @@ const rules: KarabinerRules[] = [
         ],
         type: "basic",
       },
+      // https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/to-if-alone/#with-the-lazy-flag
       {
         description: "Spacebar to Ctrl",
         type: "basic",
@@ -50,14 +51,21 @@ const rules: KarabinerRules[] = [
         to: [
           {
             key_code: "left_control",
-            modifiers: ["any"],
+            lazy: true
           },
         ],
         to_if_alone: [
           {
             key_code: "spacebar",
           }
-        ]
+        ],
+        to_if_held_down: [
+          {key_code: "left_control"}
+        ],
+        "parameters": {
+          "basic.to_if_alone_timeout_milliseconds": 100,
+          "basic.to_if_held_down_threshold_milliseconds": 200
+        }
       },
       {
         type: "basic",
@@ -118,7 +126,8 @@ const rules: KarabinerRules[] = [
     // o = "Open" applications
     o: {
       i: app("IntelliJ IDEA"),
-      p: app("1Password"),
+      // password "v"ault
+      v: app("1Password"),
       g: app("Google Chrome"),
       s: app("Slack"),
       t: app("iTerm"),
@@ -127,6 +136,11 @@ const rules: KarabinerRules[] = [
       m: app("Texts"),
       z: app("Bazecor"),
       b: app("BoltAI"),
+      k: app("Books"),
+      // easier to reach than "n"otebook. "j"ournal
+      j: app("Obsidian"),
+      // "d"ocument
+      d: app("Preview"),
     },
 
     // TODO: This doesn't quite work yet.
@@ -287,14 +301,14 @@ const rules: KarabinerRules[] = [
 
     // a = to avoid stretch while navigating
     // so that hjkl work like they do in vim
-    spacebar: {
-      h: {
+    a: {
+      j: {
         to: [{ key_code: "left_arrow" }],
       },
-      j: {
+      k: {
         to: [{ key_code: "down_arrow" }],
       },
-      k: {
+      i: {
         to: [{ key_code: "up_arrow" }],
       },
       l: {
@@ -315,7 +329,7 @@ const rules: KarabinerRules[] = [
       u: {
         to: [{ key_code: "page_down" }],
       },
-      i: {
+      o: {
         to: [{ key_code: "page_up" }],
       },
     },
