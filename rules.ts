@@ -63,8 +63,8 @@ const rules: KarabinerRules[] = [
           {key_code: "left_control"}
         ],
         "parameters": {
-          "basic.to_if_alone_timeout_milliseconds": 100,
-          "basic.to_if_held_down_threshold_milliseconds": 200
+          "basic.to_if_alone_timeout_milliseconds": 200,
+          "basic.to_if_held_down_threshold_milliseconds": 300
         }
       },
       {
@@ -133,7 +133,8 @@ const rules: KarabinerRules[] = [
       t: app("iTerm"),
       f: app("Finder"),
       // i"M"essage
-      m: app("Texts"),
+      x: app("Texts"),
+      m: app("Microsoft Teams"),
       z: app("Bazecor"),
       b: app("BoltAI"),
       k: app("Books"),
