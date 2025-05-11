@@ -39,34 +39,25 @@ const rules: KarabinerRules[] = [
         type: "basic",
       },
       // https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/to-if-alone/#with-the-lazy-flag
-      {
-        description: "Spacebar to Ctrl",
-        type: "basic",
-        from: {
-          key_code: "spacebar",
-          modifiers: {
-            optional: ["any"],
-          },
-        },
-        to: [
-          {
-            key_code: "left_control",
-            lazy: true
-          },
-        ],
-        to_if_alone: [
-          {
-            key_code: "spacebar",
-          }
-        ],
-        to_if_held_down: [
-          {key_code: "left_control"}
-        ],
-        "parameters": {
-          "basic.to_if_alone_timeout_milliseconds": 200,
-          "basic.to_if_held_down_threshold_milliseconds": 300
-        }
-      },
+      // {
+      //   description: "Spacebar to Ctrl on hold",
+      //   from: {
+      //     "key_code": "spacebar",
+      //     "modifiers": { "optional": ["any"] }
+      //   },
+      //   to: [
+      //     {
+      //       "key_code": "left_control",
+      //       "lazy": true
+      //     }
+      //   ],
+      //   to_if_alone: [
+      //     {
+      //       "key_code": "spacebar"
+      //     }
+      //   ],
+      //   type: "basic"
+      // },
       {
         type: "basic",
         from: {
@@ -125,23 +116,24 @@ const rules: KarabinerRules[] = [
     // },
     // o = "Open" applications
     o: {
-      i: app("IntelliJ IDEA"),
-      // password "v"ault
-      v: app("1Password"),
-      g: app("Google Chrome"),
-      s: app("Slack"),
-      t: app("iTerm"),
-      f: app("Finder"),
-      // i"M"essage
-      x: app("Texts"),
-      m: app("Microsoft Teams"),
-      z: app("Bazecor"),
       b: app("BoltAI"),
-      k: app("Books"),
-      // easier to reach than "n"otebook. "j"ournal
-      j: app("Obsidian"),
+      // password "v"ault
+      c: app("Bazecor"),
       // "d"ocument
       d: app("Preview"),
+      f: app("Finder"),
+      g: app("Google Chrome"),
+      i: app("IntelliJ IDEA"),
+      // i"M"essage
+      k: app("Books"),
+      m: app("Microsoft Teams"),
+      // easier to reach than "n"otebook. "j"ournal
+      j: app("Obsidian"),
+      s: app("Slack"),
+      t: app("iTerm"),
+      v: app("1Password"),
+      x: app("Texts"),
+      z: app("zoom.us")
     },
 
     // TODO: This doesn't quite work yet.
