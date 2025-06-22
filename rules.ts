@@ -24,6 +24,7 @@ const rules: KarabinerRules[] = [
           },
         ],
         to_after_key_up: [
+          
           {
             set_variable: {
               name: "hyper",
@@ -86,21 +87,21 @@ const rules: KarabinerRules[] = [
           }
         ],
       },
-     {
-       type: "basic",
-       description: "Disable CMD + Tab to force Hyper Key usage",
-       from: {
-         key_code: "tab",
-         modifiers: {
-           mandatory: ["left_command"],
-         },
-       },
-       to: [
-         {
-           key_code: "tab",
-         },
-       ],
-     },
+     // {
+     //   type: "basic",
+     //   description: "Disable CMD + Tab to force Hyper Key usage",
+     //   from: {
+     //     key_code: "tab",
+     //     modifiers: {
+     //       mandatory: ["left_command"],
+     //     },
+     //   },
+     //   to:
+     //     {
+     //       key_code: "tab",
+     //     },
+     //   ],
+     // },
     ],
   },
   ...createHyperSubLayers({
@@ -126,11 +127,13 @@ const rules: KarabinerRules[] = [
       i: app("IntelliJ IDEA"),
       // i"M"essage
       k: app("Books"),
-      m: app("Microsoft Teams"),
-      // easier to reach than "n"otebook. "j"ournal
       j: app("Obsidian"),
+      // easier to reach than "n"otebook. "j"ournal
+      m: app("Microsoft Teams"),
+      p: app("Pages"),
       s: app("Slack"),
       t: app("iTerm"),
+      u: app("Cursor"),
       v: app("1Password"),
       x: app("Texts"),
       z: app("zoom.us")
@@ -162,34 +165,34 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      y: rectangle("previous-display"),
+      u: rectangle("previous-display"),
       o: rectangle("next-display"),
-      k: rectangle("top-half"),
-      j: rectangle("bottom-half"),
-      h: rectangle("left-half"),
-      l: rectangle("right-half"),
+      // i: rectangle("top-half"),
+      // j: rectangle("bottom-half"),
+      // h: rectangle("left-half"),
+      // l: rectangle("right-half"),
       f: rectangle("maximize"),
-      r: rectangle("first-third"),
-      e: rectangle("last-two-thirds"),
-      u: {
-        description: "Window: Previous Tab",
-        to: [
-          {
-            key_code: "tab",
-            modifiers: ["right_control", "right_shift"],
-          },
-        ],
-      },
-      i: {
-        description: "Window: Next Tab",
-        to: [
-          {
-            key_code: "tab",
-            modifiers: ["right_control"],
-          },
-        ],
-      },
-      n: {
+      // r: rectangle("first-third"),
+      // e: rectangle("last-two-thirds"),
+      // u: {
+      //   description: "Window: Previous Tab",
+      //   to: [
+      //     {
+      //       key_code: "tab",
+      //       modifiers: ["right_control", "right_shift"],
+      //     },
+      //   ],
+      // },
+      // i: {
+      //   description: "Window: Next Tab",
+      //   to: [
+      //     {
+      //       key_code: "tab",
+      //       modifiers: ["right_control"],
+      //     },
+      //   ],
+      // },
+      k: {
         description: "Window: Next Window",
         to: [
           {
@@ -198,7 +201,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      b: {
+      j: {
         description: "Window: Back",
         to: [
           {
@@ -208,7 +211,7 @@ const rules: KarabinerRules[] = [
         ],
       },
       // Note: No literal connection. Both f and n are already taken.
-      m: {
+      l: {
         description: "Window: Forward",
         to: [
           {
