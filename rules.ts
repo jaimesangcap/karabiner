@@ -59,49 +59,19 @@ const rules: KarabinerRules[] = [
       //   ],
       //   type: "basic"
       // },
-      {
-        type: "basic",
-        from: {
-          key_code: "right_command",
-          modifiers: {
-            optional: ["any"]
-          }
-        },
-        to: [
-          {
-            key_code: "left_control",
-            modifiers: [
-              "left_option",
-              "left_shift",
-              "left_command"
-            ]
-          }
-        ],
-        to_if_alone: [
-          {
-            key_code: "spacebar",
-            modifiers: [
-              "left_command",
-              "left_shift"
-            ]
-          }
-        ],
-      },
-     // {
-     //   type: "basic",
-     //   description: "Disable CMD + Tab to force Hyper Key usage",
-     //   from: {
-     //     key_code: "tab",
-     //     modifiers: {
-     //       mandatory: ["left_command"],
-     //     },
-     //   },
-     //   to:
-     //     {
-     //       key_code: "tab",
-     //     },
-     //   ],
-     // },
+     {
+       type: "basic",
+       description: "right command to left control",
+       from: {
+         key_code: "right_command",
+         modifiers: {
+           optional: ["any"],
+         },
+       },
+       to: [{
+           key_code: "left_control",
+       }]
+     },
     ],
   },
   ...createHyperSubLayers({

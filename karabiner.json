@@ -45,6 +45,7 @@
               },
               {
                 "type": "basic",
+                "description": "right command to left control",
                 "from": {
                   "key_code": "right_command",
                   "modifiers": {
@@ -55,21 +56,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "left_control",
-                    "modifiers": [
-                      "left_option",
-                      "left_shift",
-                      "left_command"
-                    ]
-                  }
-                ],
-                "to_if_alone": [
-                  {
-                    "key_code": "spacebar",
-                    "modifiers": [
-                      "left_command",
-                      "left_shift"
-                    ]
+                    "key_code": "left_control"
                   }
                 ]
               }
