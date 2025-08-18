@@ -87,9 +87,9 @@ const rules: KarabinerRules[] = [
     // },
     // o = "Open" applications
     o: {
-      b: app("BoltAI"),
-      // password "v"ault
-      c: app("Bazecor"),
+      //b: app("BoltAI"),
+      b: app("Bazecor"),
+      c: app("Claude"),
       // "d"ocument
       d: app("Preview"),
       f: app("Finder"),
@@ -104,6 +104,7 @@ const rules: KarabinerRules[] = [
       s: app("Slack"),
       t: app("iTerm"),
       u: app("Cursor"),
+      // password "v"ault
       v: app("1Password"),
       x: app("Texts"),
       z: app("zoom.us")
