@@ -92,6 +92,7 @@ const rules: KarabinerRules[] = [
       c: app("Claude"),
       // "d"ocument
       d: app("Preview"),
+      e: app("Emacs"),
       f: app("Finder"),
       g: app("Google Chrome"),
       i: app("IntelliJ IDEA"),
