@@ -96,7 +96,6 @@ const rules: KarabinerRules[] = [
       f: app("Finder"),
       g: app("Google Chrome"),
       i: app("IntelliJ IDEA"),
-      // i"M"essage
       k: app("Books"),
       j: app("Obsidian"),
       // easier to reach than "n"otebook. "j"ournal
@@ -107,7 +106,8 @@ const rules: KarabinerRules[] = [
       u: app("Cursor"),
       // password "v"ault
       v: app("1Password"),
-      x: app("Texts"),
+      // "eXcel"
+      x: app("Numbers"),
       z: app("zoom.us")
     },
 
