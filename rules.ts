@@ -24,7 +24,7 @@ const rules: KarabinerRules[] = [
           },
         ],
         to_after_key_up: [
-          
+
           {
             set_variable: {
               name: "hyper",
@@ -87,8 +87,7 @@ const rules: KarabinerRules[] = [
     // },
     // o = "Open" applications
     o: {
-      //b: app("BoltAI"),
-      b: app("Bazecor"),
+      b: app("BoltAI"),
       c: app("Claude"),
       // "d"ocument
       d: app("Preview"),
@@ -268,7 +267,7 @@ const rules: KarabinerRules[] = [
     },
 
     // a = to avoid stretch while navigating
-    // so that hjkl work like they do in vim
+    // so that jkil work like they do in vim
     a: {
       j: {
         to: [{ key_code: "left_arrow" }],
