@@ -72,6 +72,48 @@ const rules: KarabinerRules[] = [
            key_code: "left_control",
        }]
      },
+     {
+       description: "Semicolon to Control on hold, semicolon on tap",
+       from: {
+         key_code: "semicolon",
+         modifiers: {
+           optional: ["any"],
+         },
+       },
+       to: [
+         {
+           key_code: "left_control",
+           lazy: true,
+         },
+       ],
+       to_if_alone: [
+         {
+           key_code: "semicolon",
+         },
+       ],
+       type: "basic",
+     },
+     {
+       description: "Quote to Option on hold, quote on tap",
+       from: {
+         key_code: "quote",
+         modifiers: {
+           optional: ["any"],
+         },
+       },
+       to: [
+         {
+           key_code: "left_option",
+           lazy: true,
+         },
+       ],
+       to_if_alone: [
+         {
+           key_code: "quote",
+         },
+       ],
+       type: "basic",
+     },
     ],
   },
   ...createHyperSubLayers({
