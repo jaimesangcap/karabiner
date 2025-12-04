@@ -39,26 +39,6 @@ const rules: KarabinerRules[] = [
         ],
         type: "basic",
       },
-      // https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/to-if-alone/#with-the-lazy-flag
-      // {
-      //   description: "Spacebar to Ctrl on hold",
-      //   from: {
-      //     "key_code": "spacebar",
-      //     "modifiers": { "optional": ["any"] }
-      //   },
-      //   to: [
-      //     {
-      //       "key_code": "left_control",
-      //       "lazy": true
-      //     }
-      //   ],
-      //   to_if_alone: [
-      //     {
-      //       "key_code": "spacebar"
-      //     }
-      //   ],
-      //   type: "basic"
-      // },
      {
        type: "basic",
        description: "right command to left control",
@@ -82,8 +62,22 @@ const rules: KarabinerRules[] = [
        },
        to: [
          {
+           set_variable: {
+             name: "semicolon_held",
+             value: 1,
+           },
+         },
+         {
            key_code: "left_option",
            lazy: true,
+         },
+       ],
+       to_after_key_up: [
+         {
+           set_variable: {
+             name: "semicolon_held",
+             value: 0,
+           },
          },
        ],
        to_if_alone: [
@@ -92,6 +86,28 @@ const rules: KarabinerRules[] = [
          },
        ],
        type: "basic",
+     },
+     {
+       type: "basic",
+       description: "Spacebar to hyphen when semicolon is held (M-- in Emacs)",
+       from: {
+         key_code: "spacebar",
+         modifiers: {
+           optional: ["any"],
+         },
+       },
+       to: [
+         {
+           key_code: "hyphen",
+         },
+       ],
+       conditions: [
+         {
+           type: "variable_if",
+           name: "semicolon_held",
+           value: 1,
+         },
+       ],
      },
     ],
   },
