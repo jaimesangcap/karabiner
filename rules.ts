@@ -85,6 +85,9 @@ const rules: KarabinerRules[] = [
            key_code: "semicolon",
          },
        ],
+       parameters: {
+         "basic.to_if_alone_timeout_milliseconds": 300,
+       },
        type: "basic",
      },
      {
